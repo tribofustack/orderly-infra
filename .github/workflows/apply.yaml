@@ -35,7 +35,7 @@ jobs:
 
     - name: apply
       run: |
-        terraform apply -auto-approve \
+        terraform apply -auto-approve -lock=false \
         -var="project_id=${{ vars.PROJECT_ID }}" \
         -var="region=${{ vars.REGION }}" \
         -var="zone=${{ vars.ZONE }}" \
