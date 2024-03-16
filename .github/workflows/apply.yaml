@@ -30,9 +30,6 @@ jobs:
     - name: validate
       run: terraform validate
 
-    # - name: plan
-    #   run: terraform plan
-
     - name: apply
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }}
