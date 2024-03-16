@@ -27,4 +27,4 @@ jobs:
           run: terraform validate
 
         - name: Terraform Destroy
-          run: terraform destroy -auto-approve -var="project_id=${{ vars.PROJECT_ID }}" -var="region=${{ vars.REGION }}" -var="zone=${{ vars.ZONE }}"
+          run: terraform destroy -auto-approve -lock=false -var="project_id=${{ vars.PROJECT_ID }}" -var="region=${{ vars.REGION }}" -var="zone=${{ vars.ZONE }}"
