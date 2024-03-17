@@ -22,16 +22,13 @@ jobs:
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v3
       
-        - name: init
+        - name: terraform init
           run: terraform init -backend-config="bucket=${{ vars.BUCKET_NAME }}" -upgrade
         
-        - name: validate
+        - name: terraform validate
           run: terraform validate
 
-        - name: plan
-          run: terraform plan
-
-        - name: apply
+        - name: terraform apply
           run: |
             terraform apply -auto-approve \
             -var="project_id=${{ vars.PROJECT_ID }}" \
@@ -43,5 +40,5 @@ jobs:
             -var="db_username=${{ vars.DB_USERNAME }}" \
             -var="db_pass=${{ secrets.DB_PASSWORD }}"             
 
-        - name: Database
+        - name: db connection
           run: terraform output db_info
