@@ -29,16 +29,7 @@ jobs:
           run: terraform validate
 
         - name: terraform apply
-          run: |
-            terraform apply -auto-approve \
-            -var="project_id=${{ vars.PROJECT_ID }}" \
-            -var="region=${{ vars.REGION }}" \
-            -var="zone=${{ vars.ZONE }}" \
-            -var="cluster_name=${{ vars.CLUSTER_NAME }}" \
-            -var="instance_db_name=${{ vars.DB_INSTANCE_NAME }}" \
-            -var="db_name=${{ vars.DB_NAME }}" \
-            -var="db_username=${{ vars.DB_USERNAME }}" \
-            -var="db_pass=${{ secrets.DB_PASSWORD }}"             
+          run: terraform apply -auto-approve -var="project_id=${{ vars.PROJECT_ID }}" -var="region=${{ vars.REGION }}" -var="zone=${{ vars.ZONE }}" -var="cluster_name=${{ vars.CLUSTER_NAME }}" -var="instance_db_name=${{ vars.DB_INSTANCE_NAME }}" -var="db_name=${{ vars.DB_NAME }}" -var="db_username=${{ vars.DB_USERNAME }}" -var="db_pass=${{ secrets.DB_PASSWORD }}"             
 
         - name: db connection
           run: terraform output db_info
