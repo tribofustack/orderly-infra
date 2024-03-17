@@ -1,7 +1,7 @@
 module "database" {
   source = "git::https://github.com/tribofustack/cloudsql-iac.git"
 
-  depends_on = [ google_project_service.serviceusage ]
+  depends_on = google_project_service.serviceusage
 
   project_id  = var.project_id
   zone        = var.zone
