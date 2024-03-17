@@ -19,12 +19,11 @@ jobs:
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v3
 
-
         - name: Terraform init with upgrade
           run: terraform init -backend-config="bucket=${{ vars.BUCKET_NAME }}" -upgrade
         
-        - name: Terraform validate
+        - name: terraform validate
           run: terraform validate
 
-        - name: Terraform Destroy
-          run: terraform destroy -auto-approve -lock=false
+        - name: terraform destroy
+          run: terraform destroy -auto-approve -lock=false -var="project_id=${{ vars.PROJECT_ID }}" -var="region=${{ vars.REGION }}" -var="zone=${{ vars.ZONE }}"
