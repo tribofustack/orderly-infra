@@ -1,6 +1,8 @@
 module "database" {
   source = "git::https://github.com/tribofustack/cloudsql-iac.git"
 
+  depends_on = [ google_project_service.serviceusage ]
+
   project_id  = var.project_id
   zone        = var.zone
   region      = var.region
@@ -13,6 +15,8 @@ module "database" {
 module "cluster" {
   source = "git::https://github.com/tribofustack/kubernetes-engine-iac.git"
   
+  depends_on = [ google_project_service.serviceusage ]
+
   project_id  = var.project_id
   zone        = var.zone
   region      = var.region  
