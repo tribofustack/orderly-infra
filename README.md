@@ -114,19 +114,27 @@
 
 
 
-#### Why PostgreSQL
+#### PostgreSQL
 
-1. **Data Integrity**: PostgreSQL supports data integrity features such as foreign keys, atomic transactions, and multi-version concurrency control (MVCC), which are essential for maintaining consistent relationships among tables, such as the relations between orders, customers, order-items, products, and payments.
-2. **Extensibility and Type Compatibility**: It can be extended with custom data types, functions, and operators, which can be useful for customizing the behavior of table operations, such as those for the products table, for example.
-3. **Performance and Reliability**:  PostgreSQL is known for its high reliability and performance with large volumes of data and complex transactions, which is crucial for order and payment management systems.
-4. **Advanced Features**: It provides advanced features like subselects, nested transactions (savepoints), and a sophisticated system of concurrency control, all important for complex operations involving multiple tables and updates.
-5. **Support for SQL and NoSQL**: In addition to supporting full SQL, PostgreSQL also has support for JSON and other NoSQL operations, allowing for flexibility in data handling, which can be useful for managing semi-structured data in fields like the description of products.
-6. **Security**: It offers a robust access control system, with support for various authentication techniques, which is critical for protecting sensitive customer and transaction information.
-7. **Open Source**: It is open source, meaning there are no licensing costs, and it has an active community contributing to its continuous maintenance and improvement.
+- **Integridade de Dados**: O PostgreSQL suporta recursos de integridade de dados, como chaves estrangeiras, transações atômicas e controle de concorrência de várias versões (MVCC), que são essenciais para manter relacionamentos consistentes entre tabelas, como as relações entre pedidos, clientes, itens de pedido, produtos e pagamentos.
+
+- **Extensibilidade e Compatibilidade de Tipos**: Ele pode ser estendido com tipos de dados personalizados, funções e operadores, o que pode ser útil para personalizar o comportamento das operações de tabela, como aquelas para a tabela de produtos, por exemplo.
+
+- **Desempenho e Confiabilidade**: O PostgreSQL é conhecido por sua alta confiabilidade e desempenho com grandes volumes de dados e transações complexas, o que é crucial para sistemas de gerenciamento de pedidos e pagamentos.
+
+- **Recursos Avançados**: Ele oferece recursos avançados como subseleções, transações aninhadas (pontos de salvamento) e um sistema sofisticado de controle de concorrência, todos importantes para operações complexas envolvendo várias tabelas e atualizações.
+
+- **Suporte para SQL e NoSQL**: Além de suportar SQL completo, o PostgreSQL também possui suporte para JSON e outras operações NoSQL, permitindo flexibilidade no manuseio de dados, o que pode ser útil para gerenciar dados semi-estruturados em campos como a descrição de produtos.
+
+- **Segurança**: Ele oferece um sistema robusto de controle de acesso, com suporte para várias técnicas de autenticação, o que é fundamental para proteger informações sensíveis de clientes e transações.
+
+- **Código Aberto**: É de código aberto, o que significa que não há custos de licenciamento, e possui uma comunidade ativa contribuindo para sua manutenção e melhoria contínuas.
+
+A escolha do banco de dados PostgreSQL oferece uma série de vantagens, incluindo os recursos mencionados acima, que são cruciais para o sucesso de sistemas de gerenciamento de pedidos e pagamentos.
 
 <br><br>
 
-#### Why Redis
+#### Redis
 
 A escolha de utilizar Redis como a tecnologia subjacente para persistir dados de trabalho na arquitetura de filas é fundamentada em diversos benefícios que oferece ao sistema. Abaixo estão alguns pontos-chave que justificam essa decisão:
 
