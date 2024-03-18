@@ -6,6 +6,7 @@
     Google Cloud Platform + Infrastructure as Code
 </h3>
 
+
 <br>
 
 <span>
@@ -23,8 +24,11 @@
 <br>
 
 ### This is a project to generate a Infrastructure in Google Cloud Platform. This works with many modules made with Terraform to set all configuration.
-
-<br>
+<p align="right">
+  <a href="#-license">
+    <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=ed2945&labelColor=000000">
+  </a>
+</p>
 
 ## Requirements
 
@@ -90,33 +94,27 @@
 
 <br><br>
 
-<h1 align="center">Orderly db</h1>
-
-<p align="center">
-  <a href="#-license">
-    <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=ed2945&labelColor=000000">
-  </a>
-</p>
-
-## 💻 Project
-
-
-Orderly is a cutting-edge web system designed to streamline operations for restaurant and food businesses (RMS). It draws from the principles of **Domain-Driven Design (DDD)** and **Architectural Concepts** to ensure scalability, maintainability, and a robust integration capability.
-
-## ✨ Technologies
-
-This project was built using the following technologies and architectural concepts:
-
-- [Terraform](https://www.terraform.io/)
-- [PostgreSQL](https://www.postgresql.org/)
-
-<br>
 
 <div align="center">
-  <h2>Entity Relationship Diagram - Database</h2>
+<h1>Databases</h1>
+
+<br>
+<span>
+<img width="150" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+</span>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<span>
+<img width="150" src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" />
+</span>
 </div>
 
-#### Why postgresql
+
+<br>
+<br>
+
+
+
+#### Why PostgreSQL
 
 1. **Data Integrity**: PostgreSQL supports data integrity features such as foreign keys, atomic transactions, and multi-version concurrency control (MVCC), which are essential for maintaining consistent relationships among tables, such as the relations between orders, customers, order-items, products, and payments.
 2. **Extensibility and Type Compatibility**: It can be extended with custom data types, functions, and operators, which can be useful for customizing the behavior of table operations, such as those for the products table, for example.
@@ -126,7 +124,28 @@ This project was built using the following technologies and architectural concep
 6. **Security**: It offers a robust access control system, with support for various authentication techniques, which is critical for protecting sensitive customer and transaction information.
 7. **Open Source**: It is open source, meaning there are no licensing costs, and it has an active community contributing to its continuous maintenance and improvement.
 
+<br><br>
+
+#### Why Redis
+
+A escolha de utilizar Redis como a tecnologia subjacente para persistir dados de trabalho na arquitetura de filas é fundamentada em diversos benefícios que oferece ao sistema. Abaixo estão alguns pontos-chave que justificam essa decisão:
+
+- **Desempenho e Confiabilidade**: Redis é conhecido por sua alta performance e confiabilidade. Sua estrutura de armazenamento em memória permite acesso rápido aos dados, tornando-o ideal para operações de fila que exigem baixa latência e alto throughput. Além disso, sua natureza persistente garante que os dados de trabalho sejam preservados mesmo em casos de falhas de sistema, garantindo assim a confiabilidade do sistema como um todo.
+
+- **Escalabilidade e Distribuição**: Redis suporta uma arquitetura distribuída, o que é essencial para sistemas que precisam lidar com grandes volumes de trabalho e distribuí-los de forma eficiente entre vários nós. Ao utilizar Redis como backend para as filas, podemos facilmente escalar horizontalmente, adicionando mais nós conforme necessário, sem comprometer o desempenho ou a disponibilidade do sistema.
+
+- **Independência de Plataforma**: A escolha do Redis oferece independência de plataforma para a arquitetura de fila. Isso significa que podemos ter diferentes partes do sistema, como produtores, consumidores e ouvintes de fila, sendo executados em diferentes plataformas Node.js em diferentes nós da rede. Isso proporciona flexibilidade na arquitetura do sistema e facilita a integração com outras partes do ecossistema de aplicativos.
+
+- **Integração com Bull**: Bull é uma implementação de sistema de filas baseada em Node.js que é popular e bem suportada pela comunidade. Ao escolher Redis como backend para Bull, aproveitamos a compatibilidade e a integração perfeita entre essas duas tecnologias. Isso simplifica o desenvolvimento, a manutenção e o suporte do sistema de filas, permitindo-nos focar mais na lógica de negócios do que na infraestrutura subjacente.
+
+- **A integração com o NestJS**: através do pacote @nestjs/bull representa um ponto crucial na escolha da tecnologia Redis para suportar nossa arquitetura de filas. Esse pacote oferece uma camada de abstração amigável ao Nest sobre o Bull, simplificando ainda mais o processo de integração das filas em nosso aplicativo NestJS. Com essa integração, podemos aproveitar os recursos poderosos do Bull, como alta performance e confiabilidade, enquanto nos beneficiamos da estrutura organizada e modular do NestJS. Isso nos permite desenvolver e manter nosso sistema de filas de forma mais eficiente, garantindo uma integração harmoniosa com o restante da nossa aplicação.
+  
+Em resumo, a escolha do Redis como tecnologia para suportar a arquitetura de filas oferece benefícios significativos em termos de desempenho, confiabilidade, escalabilidade e integração, tornando-o uma escolha sólida e justificável para nosso sistema.
+
+<br><br>
+
 <div align="center">
+  <h2>Entity Relationship Diagram - Database</h2>
   <img src="./assets/er-diagram.png" alt="ER Diagram" />
 </div>
 
@@ -134,6 +153,3 @@ This project was built using the following technologies and architectural concep
 
 <br> 
 
-## 📝 License
-
-This project is licensed under the MIT License. For more information, please refer to the [LICENSE](LICENSE.md) file.
