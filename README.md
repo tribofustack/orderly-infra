@@ -158,6 +158,5 @@ Em resumo, a escolha do Redis como tecnologia para suportar a arquitetura de fil
 </div>
 
 <br>
-
 <br> 
 
