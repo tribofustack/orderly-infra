@@ -9,5 +9,5 @@ provider "google" {
   project = var.project_id
   region  = var.region
   zone    = var.zone
-  teste   = 1
+  # TODO add some properties
 }
